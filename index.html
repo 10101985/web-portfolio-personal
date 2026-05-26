@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristian Robledo Macleood — Cloud & DevOps</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a0f; color: #e0e0e0; }
+        nav { background: #0d0d1a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a3e; position: sticky; top: 0; z-index: 100; }
+        nav .logo { color: #00d4ff; font-weight: bold; font-size: 1.2em; }
+        nav a { color: #a0a0c0; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        nav a:hover { color: #00d4ff; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0a0a0f 0%, #0d1b2a 50%, #0a0a0f 100%); padding: 2rem; }
+        .hero h1 { font-size: 3em; color: #ffffff; margin-bottom: 0.5rem; }
+        .hero h1 span { color: #00d4ff; }
+        .hero h2 { font-size: 1.4em; color: #a0a0c0; font-weight: normal; margin-bottom: 2rem; }
+        .hero p { max-width: 600px; color: #808090; line-height: 1.8; margin-bottom: 2rem; }
+        .btn { display: inline-block; padding: 12px 28px; background: #00d4ff; color: #0a0a0f; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 0.5rem; transition: all 0.3s; }
+        .btn:hover { background: #0099cc; transform: translateY(-2px); }
+        .btn.outline { background: transparent; border: 2px solid #00d4ff; color: #00d4ff; }
+        .btn.outline:hover { background: #00d4ff; color: #0a0a0f; }
+        section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-size: 2em; color: #00d4ff; margin-bottom: 0.5rem; }
+        .section-line { width: 60px; height: 3px; background: #00d4ff; margin-bottom: 3rem; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-text p { color: #a0a0c0; line-height: 1.8; margin-bottom: 1rem; }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .stat { background: #0d0d1a; border: 1px solid #1a1a3e; border-radius: 8px; padding: 1.5rem; text-align: center; }
+        .stat .number { font-size: 2.5em; color: #00d4ff; font-weight: bold; }
+        .stat .label { color: #808090; font-size: 0.9em; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .skill-card { background: #0d0d1a; border: 1px solid #1a1a3e; border-radius: 8px; padding: 1.5rem; transition: border-color 0.3s; }
+        .skill-card:hover { border-color: #00d4ff; }
+        .skill-card .icon { font-size: 2.5em; margin-bottom: 0.5rem; }
+        .skill-card h3 { color: #ffffff; margin-bottom: 0.5rem; }
+        .skill-card p { color: #808090; font-size: 0.9em; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: #0d0d1a; border: 1px solid #1a1a3e; border-radius: 8px; padding: 1.5rem; transition: all 0.3s; }
+        .project-card:hover { border-color: #00d4ff; transform: translateY(-4px); }
+        .project-card .tag { display: inline-block; background: #0a1628; color: #00d4ff; border: 1px solid #00d4ff; border-radius: 4px; padding: 2px 8px; font-size: 0.8em; margin: 2px; }
+        .project-card h3 { color: #ffffff; margin-bottom: 0.5rem; font-size: 1.1em; }
+        .project-card p { color: #808090; font-size: 0.9em; line-height: 1.6; margin-bottom: 1rem; }
+        .project-card a { color: #00d4ff; text-decoration: none; font-size: 0.9em; }
+        .project-card a:hover { text-decoration: underline; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info p { color: #a0a0c0; line-height: 1.8; margin-bottom: 2rem; }
+        .contact-link { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #a0a0c0; text-decoration: none; transition: color 0.3s; }
+        .contact-link:hover { color: #00d4ff; }
+        footer { background: #0d0d1a; border-top: 1px solid #1a1a3e; text-align: center; padding: 2rem; color: #606070; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">&lt;CRM /&gt;</div>
+    <div>
+        <a href="#about">Sobre mí</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div>
+        <h1>Cristian Robledo <span>Macleood</span></h1>
+        <h2>Ingeniero en Informática · Cloud & DevOps</h2>
+        <p>Especialista en infraestructura cloud, automatización y contenedores.
+        Apasionado por construir sistemas robustos y escalables en AWS.</p>
+        <a href="#projects" class="btn">Ver proyectos</a>
+        <a href="#contact" class="btn outline">Contactarme</a>
+    </div>
+</div>
+
+<section id="about">
+    <div class="section-title">Sobre mí</div>
+    <div class="section-line"></div>
+    <div class="about-grid">
+        <div class="about-text">
+            <p>Ingeniero en Informática titulado en IPLACEX (2025), con base técnica sólida
+            en soporte, hardware, redes y electrónica. Técnico Electrónico de enseñanza media.</p>
+            <p>Me especializo en Cloud Computing con AWS, automatización con Bash y Docker,
+            y administración de infraestructura Linux. Busco mi primera oportunidad formal
+            en el área TI donde pueda aportar desde el día uno.</p>
+            <p>Inglés técnico funcional — consumo documentación y recursos en inglés sin problema.</p>
+        </div>
+        <div class="about-stats">
+            <div class="stat"><div class="number">4+</div><div class="label">Proyectos en GitHub</div></div>
+            <div class="stat"><div class="number">AWS</div><div class="label">Cloud Computing</div></div>
+            <div class="stat"><div class="number">🐳</div><div class="label">Docker & Contenedores</div></div>
+            <div class="stat"><div class="number">🐧</div><div class="label">Linux & Bash</div></div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="section-title">Skills</div>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+        <div class="skill-card"><div class="icon">☁️</div><h3>AWS Cloud</h3><p>EC2, S3, IAM, CLI. Despliegue de infraestructura desde terminal.</p></div>
+        <div class="skill-card"><div class="icon">🐳</div><h3>Docker</h3><p>Imágenes, contenedores, Dockerfile, Nginx. Aplicaciones portables.</p></div>
+        <div class="skill-card"><div class="icon">🐧</div><h3>Linux & Bash</h3><p>Administración, scripting, automatización y monitoreo de sistemas.</p></div>
+        <div class="skill-card"><div class="icon">🌐</div><h3>Redes</h3><p>TCP/IP, SSH, LAN, subnetting, netplan, VirtualBox networking.</p></div>
+        <div class="skill-card"><div class="icon">📦</div><h3>Git & GitHub</h3><p>Control de versiones, repositorios, commits, push, pull, rebase.</p></div>
+        <div class="skill-card"><div class="icon">💻</div><h3>Soporte TI</h3><p>Hardware, software, redes LAN/WiFi, impresoras, virtualización.</p></div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-title">Proyectos</div>
+    <div class="section-line"></div>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>🖥️ Monitor de Sistema Linux</h3>
+            <p>Script Bash v2.0 que monitorea CPU, RAM, disco y red con alertas automáticas y colores.</p>
+            <div><span class="tag">Bash</span><span class="tag">Linux</span><span class="tag">WSL2</span></div>
+            <br><a href="https://github.com/10101985/monitor-sistema-bash" target="_blank">Ver en GitHub →</a>
+        </div>
+        <div class="project-card">
+            <h3>🌐 Red LAN Virtualizada</h3>
+            <p>Red LAN corporativa simulada con VirtualBox. Dos servidores Ubuntu con IPs estáticas y SSH.</p>
+            <div><span class="tag">VirtualBox</span><span class="tag">Ubuntu</span><span class="tag">SSH</span><span class="tag">Netplan</span></div>
+            <br><a href="https://github.com/10101985/red-lan-virtualizada" target="_blank">Ver en GitHub →</a>
+        </div>
+        <div class="project-card">
+            <h3>☁️ Servidor EC2 en AWS</h3>
+            <p>Servidor Ubuntu desplegado en AWS EC2 usando AWS CLI. SSH, SCP y monitor.sh en la nube real.</p>
+            <div><span class="tag">AWS</span><span class="tag">EC2</span><span class="tag">CLI</span><span class="tag">SSH</span></div>
+            <br><a href="https://github.com/10101985/aws-ec2-servidor" target="_blank">Ver en GitHub →</a>
+        </div>
+        <div class="project-card">
+            <h3>🐳 Docker Web App</h3>
+            <p>Aplicación web en contenedor Docker con Nginx sobre Alpine Linux. Build, run y acceso en localhost.</p>
+            <div><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">HTML5</span></div>
+            <br><a href="https://github.com/10101985/docker-web-app" target="_blank">Ver en GitHub →</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-title">Contacto</div>
+    <div class="section-line"></div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p>Estoy buscando mi primera oportunidad formal en el área TI.
+            Si tienes un rol Cloud, DevOps, SysAdmin o Soporte TI, me encantaría conversar.</p>
+            <a href="mailto:cristian.robledo.dev@gmail.com" class="contact-link">📧 cristian.robledo.dev@gmail.com</a>
+            <a href="https://linkedin.com/in/cristian-robledo-macleood-7538331b5" class="contact-link" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/10101985" class="contact-link" target="_blank">🐙 GitHub</a>
+        </div>
+        <div>
+            <p style="color:#808090; line-height:1.8;">Ubicación: Santiago, Chile<br>
+            Disponibilidad: inmediata<br>
+            Modalidad: presencial o remoto</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Cristian Robledo Macleood · Ingeniero en Informática · 2026</p>
+    <p style="margin-top:0.5rem; font-size:0.85em;">Construido con HTML, CSS y muchas horas de aprendizaje.</p>
+</footer>
+
+</body>
+</html>
